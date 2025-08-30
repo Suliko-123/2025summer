@@ -1,0 +1,215 @@
+\documentclass[a4paper]{article}
+\usepackage{ctex}
+\ctexset{
+    proofname = \heiti{证明}
+}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{moreenum}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{bm}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{listings}  % 代码块高亮需要
+\usepackage{xcolor}    % 代码块颜色需要
+\usepackage{setspace}  % 行间距需要
+\usepackage{geometry}  % 页面边距需要
+\usepackage[mathcal]{eucal}
+\usepackage[thehwcnt = 1]{iidef}
+% 导言区（已加载 graphicx 包的前提下）
+\usepackage{graphicx}
+% 设置图片文件夹路径（用 // 或 / 分隔）
+\graphicspath{{c:/Users/吴虹霖/Desktop/2025小学期/系统开发工具基础/一些图片/}}
+
+% 页面边距配置（符合学术规范）
+\geometry{a4paper, top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm}
+% 全局行间距1.2倍
+\linespread{1.2}
+
+\thecourseinstitute{中国海洋大学信息科学与工程学部}
+\thecoursename{系统开发工具基础}
+\theterm{2025年夏季学期}
+\hwname{第一周实验报告}
+\slname{\heiti{解}}
+
+\begin{document}
+\courseheader
+\name{24计算机科学与技术 吴虹霖 \quad 学号: 24020007135}
+
+% ------------------- 第一大板块：Git 练习实例 -------------------
+\section{一、Git 练习实例}
+\begin{enumerate}[itemsep=2\parskip, label=实例1.\arabic*]
+
+    % 实例1.1：Git命令和数据模型相关内容
+\item \textbf {Git 命令和数据模型相关内容}
+\begin{description}[
+leftmargin=7em, % 整体左缩进，为标签预留空间
+labelwidth=5em, % 标签固定宽度（Q 和 A 对齐的关键）
+labelsep=1em, % 标签与内容的间距
+itemsep=1\parskip, % Q 和 A 之间的垂直间距
+align=right % 标签右对齐，增强视觉对齐感
+]
+\item [\textbf {Q}:] 如果您之前从来没有用过 Git，推荐您阅读 Pro Git 的前几章，或者完成像 Learn Git Branching 这样的教程。\
+重点关注 Git 命令和数据模型相关内容；
+\item [\textbf {A}:] 1. 数据模型：Git 通过 “工作区→暂存区→本地版本库” 三层结构管理代码，分支本质是指向特定提交记录的引用，所有历史版本通过提交对象链串联，形成可追溯的变更记录。\
+\\2. 核心命令：围绕数据流转和分支操作，\texttt {git add} 将工作区文件移至暂存区，\texttt {git commit} 将暂存区内容提交到版本库形成历史记录；\texttt {git branch} 创建分支，\texttt {git checkout} 切换分支，\texttt {git merge} 合并分支，支持多线开发与历史整合。
+\end{description}
+
+% 实例1.2：历史版本可视化
+\item \textbf {Git 命令和数据模型相关内容}
+\begin {description}[
+leftmargin=7em, % 整体左缩进，为标签预留空间
+labelwidth=5em, % 标签固定宽度（Q 和 A 对齐的关键）
+labelsep=1em, % 标签与内容的间距
+itemsep=1\parskip, % Q 和 A 之间的垂直间距
+align=right % 标签右对齐，增强视觉对齐感
+]
+\item [\textbf {Q}:] 克隆本课程网站的仓库，将版本历史可视化并进行探索
+\item [\textbf {A}:] 
+step1：克隆仓库  
+\begin{figure}[hbtp]  % h=当前位置, b=页底, t=页顶, p=单独页
+  \centering  % 图片居中
+  \includegraphics[width=0.8\textwidth]{克隆仓库.png}  % 图片宽度设为页面的80%
+  \caption{克隆仓库截图}  % 图片标题
+  \label{fig:git-log}  % 图片标签（用于文中引用，如“图\ref{fig:git-log}”）
+\end{figure}  
+
+step2：可视化版本历史
+
+\begin{figure}[hbtp]  % h=当前位置, b=页底, t=页顶, p=单独页
+  \centering  % 图片居中
+  \includegraphics[width=0.8\textwidth]{查看历史版本.png}  % 图片宽度设为页面的80%
+  \caption{查看历史版本截图}  % 图片标题
+  \label{fig:git-log}  % 图片标签（用于文中引用，如“图\ref{fig:git-log}”）
+\end{figure} 
+\end{description}
+
+    % 实例1.3：查看修改
+\item \textbf {查看修改}
+\begin {description}[
+leftmargin=7em, % 整体左缩进，为标签预留空间
+labelwidth=5em, % 标签固定宽度（Q 和 A 对齐的关键）
+labelsep=1em, % 标签与内容的间距
+itemsep=1\parskip, % Q 和 A 之间的垂直间距
+align=right % 标签右对齐，增强视觉对齐感
+]
+\item [\textbf {Q}:] 是谁最后修改了 README.md 文件？（提示：使用 git log 命令并添加合适的参数）
+\item [\textbf {A}:] 
+  \begin{figure}[hbtp]  % h=当前位置, b=页底, t=页顶, p=单独页
+  \centering  % 图片居中
+  \includegraphics[width=0.8\textwidth]{查看修改人.png}  % 图片宽度设为页面的80%
+  \caption{查看修改人}  % 图片标题
+  \label{fig:git-log}  % 图片标签（用于文中引用，如“图\ref{fig:git-log}”）
+\end{figure}  
+\end{description}
+
+% 实例1.4：Git远程仓库关联（GitHub/Gitee）
+\item \textbf{Git远程仓库关联（GitHub/Gitee）}
+  \begin{itemize}[leftmargin=2em, itemsep=0.5\parskip]
+    \item \textbf{操作目的}：实现本地仓库与远程仓库（如GitHub）的连接，推送本地代码到远程。
+    \item \textbf{操作步骤}：
+      1. 在GitHub创建新仓库（如 \texttt{git-practice-2025}，不勾选“Initialize this repository with a README”）；
+      2. 本地终端执行 \texttt{git remote add origin https://github.com/你的用户名/git-practice-2025.git}（关联远程仓库）；
+      3. 执行 \texttt{git push -u origin main}（推送主分支到远程，首次推送需输入GitHub账号密码/Token）；
+      4. 浏览器打开GitHub仓库页面，验证是否看到本地提交的 \texttt{readme.md}。
+    \item \textbf{结果说明}：终端显示“Writing objects: 100% ...”（推送成功），GitHub仓库页面能看到本地代码。
+  \end{itemize}
+
+% 实例1.5：Git拉取远程仓库更新
+\item \textbf{Git拉取远程仓库更新}
+  \begin{itemize}[leftmargin=2em, itemsep=0.5\parskip]
+    \item \textbf{操作目的}：学会从远程仓库拉取他人/自己在其他设备的更新，保持本地与远程同步。
+    \item \textbf{操作步骤}：
+      1. 在GitHub网页端直接修改 \texttt{readme.md}（如添加“remote update: 2025-08-31”），并提交；
+      2. 本地终端执行 \texttt{git pull origin main}（拉取远程主分支的更新）；
+      3. 打开本地 \texttt{readme.md}，查看是否包含网页端添加的内容。
+    \item \textbf{结果说明}：终端显示“Updating a1b2c3d..e4f5g6h”（拉取成功），本地文件与远程完全同步。
+  \end{itemize}
+
+% 实例1.6：Git撤销暂存区文件
+\item \textbf{Git撤销暂存区文件}
+  \begin{itemize}[leftmargin=2em, itemsep=0.5\parskip]
+    \item \textbf{操作目的}：掌握“将文件从暂存区撤回工作区”的操作（误add后补救）。
+    \item \textbf{操作步骤}：
+      1. 本地创建新文件 \texttt{test.txt}，写入“test file”；
+      2. 执行 \texttt{git add test.txt}（将文件加入暂存区）；
+      3. 执行 \texttt{git status}（查看状态，显示“Changes to be committed: test.txt”）；
+      4. 执行 \texttt{git rm --cached test.txt}（撤销暂存区的 \texttt{test.txt}）；
+      5. 再次执行 \texttt{git status}，验证是否显示“Untracked files: test.txt”（回到未暂存状态）。
+    \item \textbf{结果说明}：\texttt{test.txt} 从“待提交”状态变回“未追踪”状态，工作区文件未被删除。
+  \end{itemize}
+
+% 实例1.7：Git查看历史提交记录（筛选与格式化）
+\item \textbf{Git查看历史提交记录（筛选与格式化）}
+  \begin{itemize}[leftmargin=2em, itemsep=0.5\parskip]
+    \item \textbf{操作目的}：高效筛选历史记录（如指定作者、时间），简化输出格式。
+    \item \textbf{操作步骤}：
+      1. 执行 \texttt{git log --oneline}（简化显示：短哈希值+提交信息，一行一条）；
+      2. 执行 \texttt{git log --author="你的用户名"}（只显示你提交的记录）；
+      3. 执行 \texttt{git log --since="2025-08-30" --until="2025-08-31"}（显示指定日期范围内的记录）；
+      4. 执行 \texttt{git log -p readme.md}（查看 \texttt{readme.md} 文件的所有修改历史，含具体内容差异）。
+    \item \textbf{结果说明}：不同命令对应不同筛选结果，能快速定位目标提交记录。
+  \end{itemize}
+
+% 实例1.8：Git解决简单合并冲突
+\item \textbf{Git解决简单合并冲突}
+  \begin{itemize}[leftmargin=2em, itemsep=0.5\parskip]
+    \item \textbf{操作目的}：处理“同一文件同一行被不同分支修改”导致的合并冲突。
+    \item \textbf{操作步骤}：
+      1. 切到 \texttt{dev} 分支：\texttt{git checkout dev}，修改 \texttt{readme.md} 第1行为“dev: conflict test”，提交；
+      2. 切回 \texttt{main} 分支：\texttt{git checkout main}，修改 \texttt{readme.md} 第1行为“main: conflict test”，提交；
+      3. 执行 \texttt{git merge dev}，终端显示“Automatic merge failed; fix conflicts and then commit the result.”（冲突提示）；
+      4. 打开 \texttt{readme.md}，看到冲突标记：
+         \begin{verbatim}
+         <<<<<<< HEAD (当前分支：main)
+         main: conflict test
+         =======
+         dev: conflict test
+         >>>>>>> dev (待合并分支：dev)
+         \end{verbatim}
+      5. 删除冲突标记，修改内容为“fixed conflict: main + dev”，执行 \texttt{git add readme.md \&\& git commit -m "fix merge conflict"}（提交解决冲突）；  % 修复：&&→\&\&
+    \item \textbf{结果说明}：合并成功，\texttt{readme.md} 保留修改后的内容，\texttt{git log} 能看到“fix merge conflict”的提交记录。
+  \end{itemize}
+
+% 实例1.9：Git删除本地与远程分支
+\item \textbf{Git删除本地与远程分支}
+  \begin{itemize}[leftmargin=2em, itemsep=0.5\parskip]
+    \item \textbf{操作目的}：清理无用分支（本地+远程），保持仓库整洁。
+    \item \textbf{操作步骤}：
+      1. 切回 \texttt{main} 分支：\texttt{git checkout main}（删除分支前需退出该分支）；
+      2. 执行 \texttt{git branch -d dev}（删除本地 \texttt{dev} 分支，若分支有未合并修改，用 \texttt{-D} 强制删除）；
+      3. 执行 \texttt{git push origin --delete dev}（删除远程 \texttt{dev} 分支）；
+      4. 执行 \texttt{git branch}（验证本地 \texttt{dev} 已删除），访问GitHub仓库查看“Branches”，验证远程 \texttt{dev} 已删除。
+    \item \textbf{结果说明}：本地和远程的 \texttt{dev} 分支均被删除，仅保留 \texttt{main} 分支。
+  \end{itemize}
+
+% 实例1.10：Git忽略文件（.gitignore配置）
+\item \textbf{Git忽略文件（.gitignore配置）}
+  \begin{itemize}[leftmargin=2em, itemsep=0.5\parskip]
+    \item \textbf{操作目的}：让Git自动忽略不需要追踪的文件（如日志、缓存、IDE配置文件）。
+    \item \textbf{操作步骤}：
+      1. 本地创建 \texttt{log.txt}（日志文件）和 \texttt{vscode/} 文件夹（IDE配置文件夹）；
+      2. 在仓库根目录创建 \texttt{.gitignore} 文件，写入以下内容：
+         \begin{verbatim}
+         # 忽略日志文件
+         log.txt
+         # 忽略VSCode配置文件夹
+         vscode/
+         # 忽略所有.csv文件
+         *.csv
+         \end{verbatim}
+      3. 执行 \texttt{git add .gitignore \&\& git commit -m "add .gitignore: ignore log/vscode/csv"}（提交配置）；  % 修复：&&→\&\&
+      4. 执行 \texttt{git status}，验证 \texttt{log.txt} 和 \texttt{vscode/} 是否显示“Untracked files”（Git已忽略它们，不提示追踪）。
+    \item \textbf{结果说明}：\texttt{log.txt}、\texttt{vscode/} 等文件不会被Git追踪，避免提交无用文件到仓库。
+  \end{itemize}
+
+\end{enumerate}
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
