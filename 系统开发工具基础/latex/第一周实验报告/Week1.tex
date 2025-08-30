@@ -4,6 +4,7 @@
     proofname = \heiti{证明}
 }
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage{float}
 \usepackage{moreenum}
 \usepackage{mathtools}
 \usepackage{url}
@@ -96,13 +97,13 @@ itemsep=1\parskip, % Q 和 A 之间的垂直间距
 align=right % 标签右对齐，增强视觉对齐感
 ]
 \item [\textbf {Q}:] 是谁最后修改了 README.md 文件？（提示：使用 git log 命令并添加合适的参数）
-\item [\textbf {A}:] 
-  \begin{figure}[hbtp]  % h=当前位置, b=页底, t=页顶, p=单独页
-  \centering  % 图片居中
-  \includegraphics[width=0.8\textwidth]{查看修改人.png}  % 图片宽度设为页面的80%
-  \caption{查看修改人}  % 图片标题
-  \label{fig:git-log}  % 图片标签（用于文中引用，如“图\ref{fig:git-log}”）
-\end{figure}  
+\item [\textbf {A}:] 如图所示。\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{查看修改人.png}
+  \caption{查看修改人}
+  \label{fig:modify-person}
+\end{figure}
 \end{description}
 
 % 实例1.4：Git远程仓库关联（GitHub/Gitee）
@@ -206,6 +207,7 @@ align=right % 标签右对齐，增强视觉对齐感
   \end{itemize}
 
 \end{enumerate}
+
 \end{document}
 
 
