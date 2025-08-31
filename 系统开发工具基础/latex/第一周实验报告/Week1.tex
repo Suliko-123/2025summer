@@ -19,40 +19,15 @@
 \usepackage{geometry}
 \usepackage[mathcal]{eucal}
 \usepackage[thehwcnt = 1]{iidef}
-\usepackage{fancyhdr} % 添加fancyhdr包用于页眉页脚
-\usepackage{fancyvrb} % 添加fancyvrb包用于更好的代码显示
-
-% 设置代码样式
-\lstset{
-    language={[LaTeX]TeX},
-    basicstyle=\ttfamily\small,
-    breaklines=true,
-    frame=single,
-    numbers=left,
-    numberstyle=\tiny\color{gray},
-    keywordstyle=\color{blue},
-    commentstyle=\color{green!50!black},
-    stringstyle=\color{red},
-    showstringspaces=false,
-    escapeinside={(*}{*)},
-    tabsize=4,
-    captionpos=b
-}
 
 % 设置图片文件夹路径（建议使用相对路径，避免绝对路径移植问题）
-\graphicspath{{images/}} % 改为相对路径
+\graphicspath{{c:/Users/吴虹霖/Desktop/2025小学期/系统开发工具基础/一些图片/}}
 
 % 页面边距配置
 \geometry{a4paper, top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm}
 % 全局行间距1.2倍
 \linespread{1.2}
 
-% 设置页眉页脚
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{中国海洋大学信息科学与工程学部}
-\fancyhead[R]{系统开发工具基础}
-\fancyfoot[C]{\thepage}
 
 \thecourseinstitute{中国海洋大学信息科学与工程学部}
 \thecoursename{系统开发工具基础}
@@ -78,12 +53,12 @@ itemsep=1\parskip,
 align=right
 ]
 \item [\textbf {Q}:] 如果您之前从来没有用过 Git，推荐您阅读 Pro Git 的前几章，或者完成像 Learn Git Branching 这样的教程。重点关注 Git 命令和数据模型相关内容；
-\item [\textbf {A}:] 1. 数据模型：Git 通过 "工作区→暂存区→本地版本库" 三层结构管理代码，分支本质是指向特定提交记录的引用，所有历史版本通过提交对象链串联，形成可追溯的变更记录。\\
+\item [\textbf {A}:] 1. 数据模型：Git 通过 “工作区→暂存区→本地版本库” 三层结构管理代码，分支本质是指向特定提交记录的引用，所有历史版本通过提交对象链串联，形成可追溯的变更记录。\\
 2. 核心命令：围绕数据流转和分支操作，\texttt {git add} 将工作区文件移至暂存区，\texttt {git commit} 将暂存区内容提交到版本库形成历史记录；\texttt {git branch} 创建分支，\texttt {git checkout} 切换分支，\texttt {git merge} 合并分支，支持多线开发与历史整合。
 \end{description}
 
 % 实例1.2：历史版本可视化
-\item \textbf {历史版本可视化}
+\item \textbf {历史版本可视化} % 修正了标题重复问题
 \begin{description}[
 leftmargin=7em,
 labelwidth=5em,
@@ -97,7 +72,7 @@ align=right
   \centering
   \includegraphics[width=0.8\textwidth]{查看历史版本.png}
   \caption{查看历史版本截图}
-  \label{fig:view-history}
+  \label{fig:view-history} % 唯一标签
 \end{figure} 
 \end{description}
 
@@ -116,7 +91,7 @@ align=right
   \centering
   \includegraphics[width=0.8\textwidth]{查看修改人.png}
   \caption{查看修改人截图}
-  \label{fig:view-modifier-1}
+  \label{fig:view-modifier} % 唯一标签
 \end{figure}
 \end{description}
 
@@ -131,18 +106,18 @@ align=right
 ]
 \item [\textbf {Q}:] 最后一次修改\_config.yml 文件中 collections: 行时的提交信息是什么？（提示：使用 git blame 和 git show）
 \item [\textbf {A}:] 如图所示。
-\begin{figure}[H]
+\begin{figure}[H] % 修正为figure环境（原itemize错误）
   \centering
   \includegraphics[width=0.8\textwidth]{查看最后一次修改记录.png}
   \caption{查看最后一次修改记录截图}
-  \label{fig:last-modify-record}
+  \label{fig:last-modify-record} % 唯一标签
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[H] % 修正为figure环境（原itemize错误）
   \centering
   \includegraphics[width=0.8\textwidth]{查看提交详细信息.png}
   \caption{查看提交详细信息截图}
-  \label{fig:commit-details}
+  \label{fig:commit-details} % 唯一标签
 \end{figure}
 \end{description}
 
@@ -161,14 +136,14 @@ align=right
   \centering
   \includegraphics[width=0.8\textwidth]{添加敏感信息.png}
   \caption{添加敏感信息}
-  \label{fig:sensitive-info}
+  \label{fig:view-modifier} % 唯一标签
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{清理提交信息.png}
-  \caption{清理提交信息}
-  \label{fig:clean-commit}
+  \caption{清理提交信息.png}
+  \label{fig:view-modifier} % 唯一标签
 \end{figure}
 \end{description}
 
@@ -200,14 +175,14 @@ align=right
   \centering
   \includegraphics[width=0.8\textwidth]{添加别名.png}
   \caption{添加别名截图}
-  \label{fig:add-alias}
+  \label{fig:view-modifier} % 唯一标签
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{输入gitgraph.png}
   \caption{输入git graph截图}
-  \label{fig:git-graph}
+  \label{fig:view-modifier} % 唯一标签
 \end{figure}
 \end{description}
 
@@ -226,7 +201,7 @@ align=right
   \centering
   \includegraphics[width=0.8\textwidth]{初始化仓库.png}
   \caption{初始化仓库截图}
-  \label{fig:init-repo}
+  \label{fig:view-modifier} % 唯一标签
 \end{figure}
 \end{description}
 
@@ -241,11 +216,11 @@ align=right
 ]
 \item [\textbf {Q}:] 使用git clone克隆一个仓库
 \item [\textbf {A}:] 如图所示。
-\begin{figure}[H]
+\begin{figure}[H] % 使用[H]固定位置，避免浮动
   \centering
   \includegraphics[width=0.8\textwidth]{克隆仓库.png}
   \caption{克隆仓库截图}
-  \label{fig:clone-repo}
+  \label{fig:clone-repo} % 唯一标签
 \end{figure}  
 \end{description}
 
@@ -260,14 +235,15 @@ align=right
 ]
 \item [\textbf {Q}:] 使用git status查看文件状态
 \item [\textbf {A}:] 如图所示。
-\begin{figure}[H]
+\begin{figure}[H] % 使用[H]固定位置，避免浮动
   \centering
-  \includegraphics[width=0.8\textwidth]{git-status.png}
-  \caption{git status截图}
-  \label{fig:git-status}
+  \includegraphics[width=0.8\textwidth]{git status.png}
+  \caption{git status.png}
+  \label{fig:clone-repo} % 唯一标签
 \end{figure}  
 \end{description}
 \end{enumerate}
+
 
 % ------------------- 第二大板块：LaTeX 使用 -------------------
 \section{二、LaTeX 使用}
@@ -283,12 +259,25 @@ itemsep=1\parskip,
 align=right
 ]
 \item [\textbf{Q}:] 创建一个简单的LaTeX文档，包含标题、作者、日期和章节结构
-\item [\textbf{A}:] 
-\begin{lstlisting}[caption={一个简单的LaTeX文档示例}, label=code:latex-basic]
+\item [\textbf{A}:] \begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={一个简单的LaTeX文档示例},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
 \documentclass{article}
 
 \title{一个简单的LaTeX文档}
-\author{吴虹霖}
+\author{姓名}
 \date{\today}
 
 \begin{document}
@@ -322,11 +311,22 @@ align=right
 ]
 \item [\textbf{Q}:] 使用LaTeX排版包含积分、求和和矩阵的复杂数学公式
 \item [\textbf{A}:] 
-\begin{lstlisting}[caption={数学公式排版}, label=code:latex-math]
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={数学公式排版},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
 \documentclass{article}
-\usepackage{amsmath}
-
-\begin{document}
 
 \[
 I = \int_{0}^{1} \left( \sum_{n=1}^{\infty} \frac{1}{n^2} \right) \cdot
@@ -336,8 +336,6 @@ c & d
 \end{pmatrix}
 \, dx
 \]
-
-\end{document}
 \end{lstlisting}
 \end{description}
 
@@ -352,14 +350,24 @@ align=right
 ]
 \item [\textbf{Q}:] 创建一个三线表并添加表格标题和标签
 \item [\textbf{A}:]
-\begin{lstlisting}[caption={表格制作}, label=code:latex-table]
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={表格制作},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
 \documentclass{article}
-\usepackage{booktabs}
-\usepackage{float}
 
-\begin{document}
-
-\begin{table}[H]
+\[\begin{table}[H]
   \centering
   \caption{学生成绩统计表}
   \label{tab:score-table}
@@ -373,9 +381,9 @@ align=right
     \bottomrule
   \end{tabular}
 \end{table}
-
-\end{document}
+]
 \end{lstlisting}
+
 \end{description}
 
 % 实例2.4：图片插入与排版
@@ -389,22 +397,32 @@ align=right
 ]
 \item [\textbf{Q}:] 插入图片并实现图文混排效果
 \item [\textbf{A}:] 
-\begin{lstlisting}[caption={图片插入与排版}, label=code:latex-figure]
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={图片插入与排版},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
+
 \documentclass{article}
-\usepackage{graphicx}
-\usepackage{float}
 
-\begin{document}
-
-\begin{figure}[H]
+\[\begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{example-image} % 替换为实际图片文件名
   \caption{示例图片}
   \label{fig:example-image}
-\end{figure}
-
-\end{document}
+]
 \end{lstlisting}
+
 \end{description}
 
 % 实例2.5：参考文献管理
@@ -418,23 +436,27 @@ align=right
 ]
 \item [\textbf{Q}:] 使用BibTeX管理并引用参考文献
 \item [\textbf{A}:] 
-\begin{lstlisting}[caption={参考文献管理}, label=code:latex-bib]
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={参考文献管理},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
 \documentclass{article}
-\usepackage{cite}
 
-\begin{document}
-
-这是一篇关于LaTeX的文档\cite{lamport1994latex}。
-
-\begin{thebibliography}{9}
-\bibitem{lamport1994latex} 
-Lamport, Leslie. 
-\textit{\LaTeX: A Document Preparation System}. 
-Addison-Wesley, 1994.
-\end{thebibliography}
-
-\end{document}
+\[\begin{thebibliography}{9}
+]
 \end{lstlisting}
+
 \end{description}
 
 % 实例2.6：自定义命令与环境
@@ -448,28 +470,27 @@ align=right
 ]
 \item [\textbf{Q}:] 定义新的命令和环境以提高文档编写效率
 \item [\textbf{A}:] 
-\begin{lstlisting}[caption={自定义命令与环境}, label=code:latex-custom]
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={自定义命令与环境},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
 \documentclass{article}
-
-% 定义新命令
-\newcommand{\vect}[1]{\boldsymbol{#1}} % 定义向量命令
-\newcommand{\R}{\mathbb{R}} % 定义实数集符号
-
-% 定义新环境
-\newenvironment{myproof}[1][证明]
-{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}]}
-{\end{trivlist}}
-
-\begin{document}
-
-向量 $\vect{v}$ 属于 $\R^n$ 空间。
-
-\begin{myproof}
-这是一个自定义的证明环境。
-\end{myproof}
-
-\end{document}
+\[\newcommand{\vect}[1]{\boldsymbol{#1}} % 定义向量命令
+\newenvironment{theorem}[2][定理]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\]
+]
 \end{lstlisting}
 \end{description}
 
@@ -484,27 +505,27 @@ align=right
 ]
 \item [\textbf{Q}:] 创建多级列表并自定义列表样式
 \item [\textbf{A}:] 
-\begin{lstlisting}[caption={列表与枚举}, label=code:latex-list]
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={列表与枚举},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
 \documentclass{article}
-\usepackage{enumitem}
-
-\begin{document}
-
-\begin{enumerate}[label=\arabic*., leftmargin=2cm]
-  \item 第一级项目
-    \begin{enumerate}[label=\alph*), leftmargin=1.5cm]
-      \item 第二级项目
-      \item 另一个第二级项目
-        \begin{enumerate}[label=\roman*), leftmargin=1cm]
-          \item 第三级项目
-          \item 另一个第三级项目
-        \end{enumerate}
-    \end{enumerate}
-  \item 回到第一级
-\end{enumerate}
-
-\end{document}
+\[\begin{description}[
+leftmargin=7em,]
+]
 \end{lstlisting}
+
 \end{description}
 
 % 实例2.8：字体与颜色设置
@@ -518,26 +539,26 @@ align=right
 ]
 \item [\textbf{Q}:] 设置文档中不同部分的字体样式和颜色
 \item [\textbf{A}:] 
-\begin{lstlisting}[caption={字体与颜色设置}, label=code:latex-font]
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={字体与颜色设置},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
 \documentclass{article}
-\usepackage{xcolor}
-
-\begin{document}
-
-{\textbf{加粗文本}} \\
-{\textit{斜体文本}} \\
-{\texttt{等宽字体}} \\
-{\textsf{无衬线字体}} \\
-{\textsc{小型大写字母}} \\
-
-{\color{red}红色文本} \\
-{\color{blue}蓝色文本} \\
-{\color{green}绿色文本} \\
-
-{\Large 大号字体} \\
-{\small 小号字体} \\
-
-\end{document}
+\[\usepackage{xcolor}
+\textbf{加粗文本} \\
+\textit{斜体文本} \\
+]
 \end{lstlisting}
 \end{description}
 
@@ -552,28 +573,26 @@ align=right
 ]
 \item [\textbf{Q}:] 自定义文档的页眉和页脚内容
 \item [\textbf{A}:] 
-\begin{lstlisting}[caption={页眉页脚设置}, label=code:latex-header]
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={页眉页脚设置},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
 \documentclass{article}
-\usepackage{fancyhdr}
-\usepackage{lipsum} % 用于生成示例文本
-
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{左侧页眉}
-\fancyhead[C]{中间页眉}
-\fancyhead[R]{右侧页眉}
-\fancyfoot[L]{左侧页脚}
-\fancyfoot[C]{\thepage}
-\fancyfoot[R]{右侧页脚}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
-
-\begin{document}
-
-\section{示例章节}
-\lipsum[1-5] % 生成一些示例文本
-
-\end{document}
+\[\usepackage{fancyhdr}
+\pagestyle{fancy} % 使用fancy页眉页脚样式
+\fancyhead[L]{左侧页眉} % 左侧页眉内容    
+]
 \end{lstlisting}
 \end{description}
 
@@ -588,44 +607,27 @@ align=right
 ]
 \item [\textbf{Q}:] 使用Beamer类创建一个简单的幻灯片演示文稿
 \item [\textbf{A}:] 
-\begin{lstlisting}[caption={幻灯片制作}, label=code:latex-beamer]
-\documentclass{beamer}
-\usetheme{Madrid} % 选择一个主题
-\title{Beamer演示示例}
-\author{吴虹霖}
-\date{\today}
-
-\begin{document}
-
-\begin{frame}
-\titlepage
-\end{frame}
-
-\begin{frame}
-\frametitle{第一张幻灯片}
-\framesubtitle{副标题}
-这是一个简单的Beamer演示文稿。
-
-\begin{itemize}
-\item 项目一
-\item 项目二
-\item 项目三
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{第二张幻灯片}
-包含数学公式：
-
-\[
-e^{i\pi} + 1 = 0
-\]
-
-\end{frame}
-
-\end{document}
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={幻灯片制作},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
+\documentclass{article}
+\[\documentclass{beamer}
+\usetheme{Madrid} % 选择一个主题    
+]
 \end{lstlisting}
+
 \end{description}
 \end{enumerate}
-
 \end{document}
