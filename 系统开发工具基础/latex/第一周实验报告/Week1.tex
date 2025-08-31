@@ -28,6 +28,7 @@
 % 全局行间距1.2倍
 \linespread{1.2}
 
+
 \thecourseinstitute{中国海洋大学信息科学与工程学部}
 \thecoursename{系统开发工具基础}
 \theterm{2025年夏季学期}
@@ -241,7 +242,393 @@ align=right
   \label{fig:clone-repo} % 唯一标签
 \end{figure}  
 \end{description}
+\end{enumerate}
 
+
+% ------------------- 第二大板块：LaTeX 使用 -------------------
+\section{二、LaTeX 使用}
+\begin{enumerate}[itemsep=2\parskip, label=实例2.\arabic*]
+
+% 实例2.1：基本文档结构
+\item \textbf{基本文档结构}
+\begin{description}[
+leftmargin=7em,
+labelwidth=5em,
+labelsep=1em,
+itemsep=1\parskip,
+align=right
+]
+\item [\textbf{Q}:] 创建一个简单的LaTeX文档，包含标题、作者、日期和章节结构
+\item [\textbf{A}:] \begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={一个简单的LaTeX文档示例},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
+\documentclass{article}
+
+\title{一个简单的LaTeX文档}
+\author{姓名}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{引言}
+这是引言部分的内容。
+
+\section{方法}
+这里描述所用的方法。
+
+\section{结果}
+这里展示实验结果。
+
+\section{结论}
+这里给出结论和未来展望。
+
+\end{document}
+\end{lstlisting}
+\end{description}
+
+% 实例2.2：数学公式排版
+\item \textbf{数学公式排版}
+\begin{description}[
+leftmargin=7em,
+labelwidth=5em,
+labelsep=1em,
+itemsep=1\parskip,
+align=right
+]
+\item [\textbf{Q}:] 使用LaTeX排版包含积分、求和和矩阵的复杂数学公式
+\item [\textbf{A}:] 
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={数学公式排版},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
+\documentclass{article}
+
+\[
+I = \int_{0}^{1} \left( \sum_{n=1}^{\infty} \frac{1}{n^2} \right) \cdot
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+\, dx
+\]
+\end{lstlisting}
+\end{description}
+
+% 实例2.3：表格制作
+\item \textbf{表格制作}
+\begin{description}[
+leftmargin=7em,
+labelwidth=5em,
+labelsep=1em,
+itemsep=1\parskip,
+align=right
+]
+\item [\textbf{Q}:] 创建一个三线表并添加表格标题和标签
+\item [\textbf{A}:]
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={表格制作},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
+\documentclass{article}
+
+\[\begin{table}[H]
+  \centering
+  \caption{学生成绩统计表}
+  \label{tab:score-table}
+  \begin{tabular}{lccc}
+    \toprule
+    姓名 & 语文 & 数学 & 英语 \\
+    \midrule
+    张三 & 90 & 95 & 88 \\
+    李四 & 85 & 80 & 92 \\
+    王五 & 78 & 89 & 84 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+]
+\end{lstlisting}
+
+\end{description}
+
+% 实例2.4：图片插入与排版
+\item \textbf{图片插入与排版}
+\begin{description}[
+leftmargin=7em,
+labelwidth=5em,
+labelsep=1em,
+itemsep=1\parskip,
+align=right
+]
+\item [\textbf{Q}:] 插入图片并实现图文混排效果
+\item [\textbf{A}:] 
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={图片插入与排版},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
+
+\documentclass{article}
+
+\[\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{example-image} % 替换为实际图片文件名
+  \caption{示例图片}
+  \label{fig:example-image}
+]
+\end{lstlisting}
+
+\end{description}
+
+% 实例2.5：参考文献管理
+\item \textbf{参考文献管理}
+\begin{description}[
+leftmargin=7em,
+labelwidth=5em,
+labelsep=1em,
+itemsep=1\parskip,
+align=right
+]
+\item [\textbf{Q}:] 使用BibTeX管理并引用参考文献
+\item [\textbf{A}:] 
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={参考文献管理},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
+\documentclass{article}
+
+\[\begin{thebibliography}{9}
+]
+\end{lstlisting}
+
+\end{description}
+
+% 实例2.6：自定义命令与环境
+\item \textbf{自定义命令与环境}
+\begin{description}[
+leftmargin=7em,
+labelwidth=5em,
+labelsep=1em,
+itemsep=1\parskip,
+align=right
+]
+\item [\textbf{Q}:] 定义新的命令和环境以提高文档编写效率
+\item [\textbf{A}:] 
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={自定义命令与环境},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
+\documentclass{article}
+\[\newcommand{\vect}[1]{\boldsymbol{#1}} % 定义向量命令
+\newenvironment{theorem}[2][定理]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\]
+]
+\end{lstlisting}
+\end{description}
+
+% 实例2.7：列表与枚举
+\item \textbf{列表与枚举}
+\begin{description}[
+leftmargin=7em,
+labelwidth=5em,
+labelsep=1em,
+itemsep=1\parskip,
+align=right
+]
+\item [\textbf{Q}:] 创建多级列表并自定义列表样式
+\item [\textbf{A}:] 
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={列表与枚举},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
+\documentclass{article}
+\[\begin{description}[
+leftmargin=7em,]
+]
+\end{lstlisting}
+
+\end{description}
+
+% 实例2.8：字体与颜色设置
+\item \textbf{字体与颜色设置}
+\begin{description}[
+leftmargin=7em,
+labelwidth=5em,
+labelsep=1em,
+itemsep=1\parskip,
+align=right
+]
+\item [\textbf{Q}:] 设置文档中不同部分的字体样式和颜色
+\item [\textbf{A}:] 
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={字体与颜色设置},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
+\documentclass{article}
+\[\usepackage{xcolor}
+\textbf{加粗文本} \\
+\textit{斜体文本} \\
+]
+\end{lstlisting}
+\end{description}
+
+% 实例2.9：页眉页脚设置
+\item \textbf{页眉页脚设置}
+\begin{description}[
+leftmargin=7em,
+labelwidth=5em,
+labelsep=1em,
+itemsep=1\parskip,
+align=right
+]
+\item [\textbf{Q}:] 自定义文档的页眉和页脚内容
+\item [\textbf{A}:] 
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={页眉页脚设置},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
+\documentclass{article}
+\[\usepackage{fancyhdr}
+\pagestyle{fancy} % 使用fancy页眉页脚样式
+\fancyhead[L]{左侧页眉} % 左侧页眉内容    
+]
+\end{lstlisting}
+\end{description}
+
+% 实例2.10：幻灯片制作
+\item \textbf{幻灯片制作}
+\begin{description}[
+leftmargin=7em,
+labelwidth=5em,
+labelsep=1em,
+itemsep=1\parskip,
+align=right
+]
+\item [\textbf{Q}:] 使用Beamer类创建一个简单的幻灯片演示文稿
+\item [\textbf{A}:] 
+\begin{lstlisting}[
+    language={[LaTeX]TeX},
+    caption={幻灯片制作},
+    label=code:latex-example,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    escapeinside={(*}{*)}
+]
+\documentclass{article}
+\[\documentclass{beamer}
+\usetheme{Madrid} % 选择一个主题    
+]
+\end{lstlisting}
+
+\end{description}
 
 
 
@@ -252,5 +639,12 @@ align=right
 
 
 \end{enumerate}
+
+
+
+
+
+
+
 \end{document}
 
