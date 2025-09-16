@@ -453,7 +453,40 @@ align=right
 ]
 \documentclass{article}
 
-\[\begin{thebibliography}{9}
+\[\\documentclass{beamer}
+
+% 设置参考文献
+\usepackage{natbib}
+\bibliographystyle{plain}
+
+\title{简单BibTeX示例}
+\begin{document}
+
+\begin{frame}{参考文献引用}
+    这是一个引用示例\cite{book1}。
+    
+    这是另一个引用示例\cite{article1}。
+\end{frame}
+
+\begin{frame}{参考文献列表}
+    \bibliography{refs} % 引用BibTeX文件
+\end{frame}
+
+\end{document}
+
+@book{book1,
+  title={简单书籍},
+  author={作者一},
+  year={2020},
+  publisher={出版社}
+}
+
+@article{article1,
+  title={简单文章},
+  author={作者二},
+  journal={期刊名},
+  year={2021}
+}
 ]
 \end{lstlisting}
 
@@ -486,10 +519,27 @@ align=right
     escapeinside={(*}{*)}
 ]
 \documentclass{article}
-\[\newcommand{\vect}[1]{\boldsymbol{#1}} % 定义向量命令
-\newenvironment{theorem}[2][定理]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-\]
+\[\documentclass{beamer}
+
+% 定义一个简单的自定义命令
+\newcommand{\hi}{\textcolor{red}{重要!}}
+
+% 定义一个简单的自定义环境
+\newenvironment{mybox}
+  {\begin{block}{注意}}
+  {\end{block}}
+
+\begin{document}
+
+\begin{frame}{简单自定义示例}
+    这是一个\hi 自定义命令的例子。
+    
+    \begin{mybox}
+        这是一个自定义环境的例子。
+    \end{mybox}
+\end{frame}
+
+\end{document}]
 ]
 \end{lstlisting}
 \end{description}
@@ -521,8 +571,21 @@ align=right
     escapeinside={(*}{*)}
 ]
 \documentclass{article}
-\[\begin{description}[
-leftmargin=7em,]
+\[\documentclass{beamer}
+\begin{document}
+
+\begin{frame}{简单列表}
+    \begin{itemize}
+        \item 主要项目
+        \begin{itemize}
+            \item 子项目
+            \item 子项目
+        \end{itemize}
+        \item 主要项目
+    \end{itemize}
+\end{frame}
+
+\end{document}
 ]
 \end{lstlisting}
 
@@ -624,8 +687,35 @@ align=right
 ]
 \documentclass{article}
 \[\documentclass{beamer}
-\usetheme{Madrid} % 选择一个主题    
-]
+\usetheme{default} % 使用默认主题
+
+% 演示文稿信息
+\title{简单的两页演示文稿}
+\author{您的姓名}
+\date{\today}
+
+\begin{document}
+
+% 第一页：标题页
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% 第二页：内容页
+\begin{frame}{主要内容}
+    这是一个简单的两页Beamer演示文稿。
+    
+    \begin{itemize}
+        \item 第一项内容
+        \item 第二项内容
+        \item 第三项内容
+    \end{itemize}
+    
+    \vspace{0.5cm}
+    
+\end{frame}
+
+\end{document}]
 \end{lstlisting}
 
 \end{description}
