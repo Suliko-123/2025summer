@@ -1,0 +1,14 @@
+﻿  Backpack.cpp
+  cpp.cpp
+  Display.cpp
+C:\Users\田欢欢\Downloads\Display.cpp(180,16): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\田欢欢\Downloads\Display.cpp(199,18): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  Enemy.cpp
+  Game.cpp
+  Map.cpp
+  MapState.cpp
+  Object.cpp
+  Player.cpp
+  Thing.cpp
+  正在生成代码...
+  Project1.vcxproj -> C:\Users\田欢欢\Desktop\Project1\x64\Debug\Project1.exe
